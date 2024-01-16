@@ -1,0 +1,51 @@
+﻿@page "/deleteduser"
+
+<title>User</title>
+
+@using UserManagement.Models
+@using UserManagement.Data
+@inject NavigationManager NavigationManager
+@inject UserService userService
+
+<h3>DeletedUsers</h3>
+
+
+
+@if (Users == null)
+{
+    <p>No records found</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Designation</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Users)
+            {
+                <tr>
+                    <td >@user.Name</td>
+                    <td>@user.Age</td>
+                    <td>@user.City</td>
+                    <td>@user.Designation</td>
+                    <td>
+
+                        <button class="btn btn-warning" @onclick="() => RestoreUser(user.Id)">Restore</button>
+
+
+                       
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+

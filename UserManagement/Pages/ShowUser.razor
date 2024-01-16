@@ -1,0 +1,60 @@
+﻿
+@page "/fetchuser"
+
+<title>User</title>
+
+@using UserManagement.Models
+@using UserManagement.Data
+@inject NavigationManager NavigationManager
+@inject UserService userService
+<style>
+    .name-hover:hover {
+        color: green; /* Change this to the desired hover color */
+        cursor: pointer;
+    }
+     .center-text {
+        text-align: center;
+    }
+</style>
+
+<h1>User List</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (Users == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Designation</th>
+                    <th class="center-text">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Users)
+            {
+                <tr >
+                    <td @onclick="() => GetUser(user.Id)" class="name-hover">@user.Name</td>
+                    <td>@user.Age</td>
+                    <td>@user.City</td>
+                    <td>@user.Designation</td>
+                            <td class="center-text">
+                       
+                        <button class="btn btn-danger" @onclick="() => DeleteUser(user.Id)">Delete</button>
+
+                        <button class="btn btn-primary" @onclick="() => UpdateUser(user.Id)">Update</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+

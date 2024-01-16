@@ -1,0 +1,25 @@
+﻿@page "/getuser/{id:int}"
+
+@using UserManagement.Models
+@using UserManagement.Data
+@inject IJSRuntime JSRuntime
+@inject UserService userService
+@inject NavigationManager NavigationManager
+
+<h3>Get User</h3>
+
+@if (user != null)
+{
+    <ul style="list-style-type: none;">
+        <li><strong>Name:</strong> @user.Name</li>
+        <li><strong>Age:</strong> @user.Age</li>
+        <li><strong>Designation:</strong> @user.Designation</li>
+        <li><strong>City:</strong> @user.City</li>
+       
+    </ul>
+    <button class="btn btn-success" @onclick="() => BackToUserList()">Back to list</button>
+}
+else
+{
+    <p>User not found.</p>
+}
