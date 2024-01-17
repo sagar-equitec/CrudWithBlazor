@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Data;
 using UserManagement.Models;
 namespace UserManagement.Data
@@ -14,42 +15,62 @@ namespace UserManagement.Data
             _userContext = userContext;
         }
 
-        public async Task<List<GetAllUsersResult>> GetAllUsersAsync()
+        //GET ALL
+        public async Task<List<GetAllUsersDetailsResult>> GetAllUsersAsync()
         {
-            return await _userContext.Procedures.GetAllUsersAsync();
+            return await _userContext.Procedures.GetAllUsersDetailsAsync();
+        }
+        public async Task<List<GetAllUsersSkillsResult>> GetAllSkillAsync()
+        {
+            return await _userContext.Procedures.GetAllUsersSkillsAsync();
         }
 
-        public async Task<bool> AddUserAsync(User user)
+        //ADD EMP
+      /*  public async Task<bool> AddUserAsync(User user)
         {
-            await _userContext.Procedures.CreateUserAsync(user.Name, user.Designation, user.Age , user.City);
+            await _userContext.Procedures.InsertEmployeeWithSkillsAsync(user.Name, user.Designation , user.City, "1,2,3");
+            return true;
+        }*/
+        public async Task<bool> AddUserAsync(User user, string selectedIds)
+        {
+            await _userContext.Procedures.InsertEmployeeWithSkillsAsync(user.Name, user.Designation, user.City, selectedIds);
             return true;
         }
-
+        //SOFT DELETE
         public async Task<bool> DeleteUserAsync(int id)
         {
-            await _userContext.Procedures.DeleteUserAsync(id);
+            await _userContext.Procedures.SoftDeleteUserAsync(id);
             return true;
         }
 
-        public async Task<GetUserByIdResult> GetUserByIdAsync(int id)
+        //get single emp 
+        public async Task<List<GetEmployeeWithSkillsResult>> GetUserByIdAsync(int id)
         {
-           return await _userContext.Procedures.GetUserByIdAsync(id);
+           return await _userContext.Procedures.GetEmployeeWithSkillsAsync(id);
         }
 
-        internal async Task<bool> UpdateUserAsync(GetUserByIdResult GetUserByIdResult)
+        //update emp
+        internal async Task<bool> UpdateUserAsync(GetEmployeeWithSkillsResult GetUserByIdResult)
         {
-            await _userContext.Procedures.UpdateUserAsync(GetUserByIdResult.Id, GetUserByIdResult.Name, GetUserByIdResult.Designation, GetUserByIdResult.Age, GetUserByIdResult.City);
+            await _userContext.Procedures.UpdateUserWithSkillsAsync(GetUserByIdResult.UserId, GetUserByIdResult.UserName, GetUserByIdResult.UserDesignation, GetUserByIdResult.UserCity, "4,5,6");
             return true;
-        }
-        public async Task<List<DeletedUsersResult>> GetDeletedUsers()
-        {
-            return await _userContext.Procedures.DeletedUsersAsync();
         }
 
-        public async Task<bool> RestoreUserAsync(int id)
+        //SHOW DELETED RECORDS
+        public async Task<List<GetDeletedRecordsResult>> GetDeletedUsers()
         {
-            await _userContext.Procedures.RestoreUserAsync(id);
-            return true;
+            return await _userContext.Procedures.GetDeletedRecordsAsync();
         }
+
+        public async  Task AddUserSkillAsync(int userId, int skillId)
+        {
+             await _userContext.Procedures.AddUserSkillAsync(userId, skillId);
+        }
+
+        /* public async Task<bool> RestoreUserAsync(int id)
+         {
+             await _userContext.Procedures.(id);
+             return true;
+         }*/
     }
 }

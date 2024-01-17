@@ -21,7 +21,6 @@ else
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Age</th>
                 <th>City</th>
                 <th>Designation</th>
                 <th>Action</th>
@@ -31,13 +30,15 @@ else
             @foreach (var user in Users)
             {
                 <tr>
-                    <td >@user.Name</td>
-                    <td>@user.Age</td>
-                    <td>@user.City</td>
-                    <td>@user.Designation</td>
+                    <td >@user.UserName</td>
+                    <td>@user.UserCity</td>
+                    <td>@user.UserDesignation</td>
                     <td>
 
-                        <button class="btn btn-warning" @onclick="() => RestoreUser(user.Id)">Restore</button>
+
+
+                       @* handle restore*@
+                        <button class="btn btn-warning" @onclick="() => RestoreUser(1)">Restore</button>
 
 
                        

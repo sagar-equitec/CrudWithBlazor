@@ -2,20 +2,27 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace UserManagement.Models;
 
 public partial class User
 {
+   
     public int Id { get; set; }
 
+    [Required(ErrorMessage = "Name is required.")]
     public string Name { get; set; }
 
+    [Required(ErrorMessage = "Designation is required.")]
     public string Designation { get; set; }
 
-    public int Age { get; set; }
-
+    [Required(ErrorMessage = "City is required.")]
     public string City { get; set; }
 
     public bool? IsActive { get; set; }
+
+    public virtual ICollection<Skill> Skills { get; set; } = new List<Skill>();
+
+   
 }

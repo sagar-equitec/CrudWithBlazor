@@ -12,7 +12,9 @@ namespace UserManagement.Pages
         [Parameter]
         public int Id { get; set; }
 
-        private GetUserByIdResult user = new GetUserByIdResult();
+        private List<GetEmployeeWithSkillsResult> user = new List<GetEmployeeWithSkillsResult>();
+        private GetEmployeeWithSkillsResult newUser = new GetEmployeeWithSkillsResult();
+        private List<string> skills = new List<string>();
 
         protected override async Task OnInitializedAsync()
         {
@@ -23,7 +25,14 @@ namespace UserManagement.Pages
         private async Task HandleValidSubmit()
         {
 
-            isUserUpdated = await userService.UpdateUserAsync(user);
+           
+
+            foreach (var item in user)
+            {
+                newUser = item;
+                skills.Add(item.SkillName);
+            }
+          /*  isUserUpdated = await userService.UpdateUserAsync();
 
 
 
@@ -35,7 +44,7 @@ namespace UserManagement.Pages
             else
             {
                 Console.WriteLine("Failed to update user.");
-            }
+            }*/
         }
     }
 }

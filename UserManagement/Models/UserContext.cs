@@ -13,25 +13,60 @@ public partial class UserContext : DbContext
     {
     }
 
+    public virtual DbSet<Skill> Skills { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Skill>(entity =>
+        {
+            entity.HasKey(e => e.Skillid).HasName("PK__skills__AE6B6FE753D6B3B2");
+
+            entity.ToTable("skills");
+
+            entity.Property(e => e.Skillid).HasColumnName("skillid");
+            entity.Property(e => e.Skill1)
+                .HasMaxLength(255)
+                .HasColumnName("skill");
+        });
+
         modelBuilder.Entity<User>(entity =>
         {
+            entity.HasKey(e => e.Id).HasName("PK__user__3213E83F8FBD4862");
+
+            entity.ToTable("user");
+
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.City)
-                .IsRequired()
-                .HasMaxLength(100)
-                .IsFixedLength();
+                .HasMaxLength(255)
+                .HasColumnName("city");
             entity.Property(e => e.Designation)
-                .IsRequired()
-                .HasMaxLength(100)
-                .IsFixedLength();
-            entity.Property(e => e.IsActive).HasDefaultValueSql("((1))");
+                .HasMaxLength(255)
+                .HasColumnName("designation");
+            entity.Property(e => e.IsActive).HasColumnName("isActive");
             entity.Property(e => e.Name)
-                .IsRequired()
-                .HasMaxLength(100)
-                .IsFixedLength();
+                .HasMaxLength(255)
+                .HasColumnName("name");
+
+            entity.HasMany(d => d.Skills).WithMany(p => p.Users)
+                .UsingEntity<Dictionary<string, object>>(
+                    "UserSkill",
+                    r => r.HasOne<Skill>().WithMany()
+                        .HasForeignKey("SkillId")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__user_skil__skill__31EC6D26"),
+                    l => l.HasOne<User>().WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__user_skil__user___30F848ED"),
+                    j =>
+                    {
+                        j.HasKey("UserId", "SkillId").HasName("PK__user_ski__36059F384E585889");
+                        j.ToTable("user_skills");
+                        j.IndexerProperty<int>("UserId").HasColumnName("user_id");
+                        j.IndexerProperty<int>("SkillId").HasColumnName("skill_id");
+                    });
         });
 
         OnModelCreatingGeneratedProcedures(modelBuilder);

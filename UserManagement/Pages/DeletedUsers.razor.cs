@@ -6,7 +6,7 @@ namespace UserManagement.Pages
 {
     public partial class DeletedUsers
     {
-        private List<DeletedUsersResult>? Users;
+        private List<GetDeletedRecordsResult>? Users;
 
         protected override async Task OnInitializedAsync()
         {
@@ -14,10 +14,10 @@ namespace UserManagement.Pages
         }
         private async Task RestoreUser(int userId)
         {
-            bool flag = await userService.RestoreUserAsync(userId);
+           /* bool flag = await userService.RestoreUserAsync(userId);*/
             NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
         }
 
-      
+
     }
 }

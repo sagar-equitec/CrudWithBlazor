@@ -6,21 +6,66 @@ namespace UserManagement.Pages
     public partial class AddUser
     {
         private User user = new User();
+        private List<GetAllUsersSkillsResult> getskills = new List<GetAllUsersSkillsResult>();
+        public List<int> getSelected { get; set; } = new List<int>();
+        public string? selectedids;
+
+        protected override async Task OnInitializedAsync()
+        {
+
+            getskills = await userService.GetAllSkillAsync();
+        }
+
+
+        public void CheckboxClicked(int skillid, object checkedValue)
+        {
+            if ((bool)checkedValue)
+            {
+
+                getSelected.Add(skillid);
+
+            }
+
+            foreach (var item in getSelected) 
+            {
+                selectedids = selectedids + "," + item;
+            }
+        }
 
         private async void HandleValidSubmit()
         {
-            bool isUserAdded = await userService.AddUserAsync(user);
-            if (isUserAdded)
+            try
             {
-                user = new();
-                await JSRuntime.InvokeVoidAsync("alert", "User added successfully");
 
+                bool isUserAdded = await userService.AddUserAsync(user, selectedids);
 
+                if (isUserAdded)
+                {
+                   
+                    int userId = user.Id;
+
+                   
+                    foreach (int skillId in getSelected)
+                    {
+                        await userService.AddUserSkillAsync(userId, skillId);
+                    }
+
+                 
+                 
+                    user = new User();
+
+                   
+                    await JSRuntime.InvokeVoidAsync("alert", "User added successfully");
+                }
+                else
+                {
+                    Console.WriteLine("Failed to save user.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-
-                Console.WriteLine("Failed to save user.");
+                // Handle exception, log, etc.
+                Console.WriteLine($"Error handling valid submit: {ex.Message}");
             }
         }
     }

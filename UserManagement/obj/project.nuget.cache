@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uiZZA+q8KlXrDcfuJ6opghuYSd5QpjTz56Iuee3LiJkK/7j9c8RRkqcDrsenYKM0Kr4UY289nO/7n/F5krMwTQ==",
+  "dgSpecHash": "4t9mavnsBAk3N4gXAPaHUfjts4a2a8iQbTljJDENe436JdlMyhSAphSH5TG942GhkgB/35jvufQN8FwruD3PWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\equi-456\\Desktop\\MyBlazor\\UserManagement\\CrudWithBlazor\\UserManagement\\UserManagement.csproj",
+  "projectFilePath": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\UserManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\equi-456\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\equi-456\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

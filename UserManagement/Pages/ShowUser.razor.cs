@@ -5,13 +5,37 @@ namespace UserManagement.Pages
 {
     public partial class ShowUser
     {
-        private List<GetAllUsersResult>? Users;
+        private List<GetAllUsersDetailsResult>? Users;
+        private List<GetAllUsersSkillsResult>? Skills;
+        public Dictionary<int, string> empSkillsDictionary = new Dictionary<int, string>();
+
+
 
         protected override async Task OnInitializedAsync()
         {
             Users = await userService.GetAllUsersAsync();
+
+            Skills = await userService.GetAllSkillAsync();
+
+
+
+            foreach (var user in Users)
+            {
+                var userSkills = Skills
+                    .Where(skill => skill.UserId == user.UserId)
+                    .Select(skill => skill.SkillName);
+
+                empSkillsDictionary[user.UserId] = string.Join(", ", userSkills);
+            }
+
+
         }
 
+        public void ConcatSkills()
+        {
+           
+        }
+        
         private async Task DeleteUser(int userId)
         {
             await userService.DeleteUserAsync(userId);

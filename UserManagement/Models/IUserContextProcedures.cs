@@ -12,12 +12,17 @@ namespace UserManagement.Models
 {
     public partial interface IUserContextProcedures
     {
-        Task<int> CreateUserAsync(string Name, string Designation, int? Age, string City, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
-        Task<List<DeletedUsersResult>> DeletedUsersAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
-        Task<int> DeleteUserAsync(int? Id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
-        Task<List<GetAllUsersResult>> GetAllUsersAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
-        Task<GetUserByIdResult> GetUserByIdAsync(int? Id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
-        Task<int> RestoreUserAsync(int? Id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
-        Task<int> UpdateUserAsync(int? Id, string Name, string Designation, int? Age, string City, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> AddUserDetailsAsync(string Name, string Designation, string City, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> AddUserSkillAsync(int? UserId, int? SkillId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetAllSkillsResult>> GetAllSkillsAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetAllUsersDetailsResult>> GetAllUsersDetailsAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetAllUsersSkillsResult>> GetAllUsersSkillsAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetAllUsersWithSkillsResult>> GetAllUsersWithSkillsAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetDeletedRecordsResult>> GetDeletedRecordsAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetEmployeeWithSkillsResult>> GetEmployeeWithSkillsAsync(int? UserId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetSingleUserDetailsResult>> GetSingleUserDetailsAsync(int? UserId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> InsertEmployeeWithSkillsAsync(string UserName, string Designation, string City, string SkillIds, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> SoftDeleteUserAsync(int? UserId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> UpdateUserWithSkillsAsync(int? UserId, string UserName, string Designation, string City, string NewSkillIds, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
     }
 }

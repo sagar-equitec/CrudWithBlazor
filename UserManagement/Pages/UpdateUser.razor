@@ -7,32 +7,27 @@
 
 <h3>Edit User</h3>
 
-<EditForm Model="@user" OnValidSubmit="@HandleValidSubmit">
+<EditForm Model="@newUser" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
     <div class="form-group">
         <label for="Name">Name:</label>
-        <InputText id="Name" @bind-Value="user.Name" class="form-control" />
-        <ValidationMessage For="@(() => user.Name)" />
+        <InputText id="Name" @bind-Value="newUser.UserName" class="form-control" />
+        <ValidationMessage For="@(() => newUser.UserName)" />
     </div>
 
     <div class="form-group">
         <label for="Designation">Designation:</label>
-        <InputText id="Designation" @bind-Value="user.Designation" class="form-control" />
-        <ValidationMessage For="@(() => user.Designation)" />
+        <InputText id="Designation" @bind-Value="newUser.UserDesignation" class="form-control" />
+        <ValidationMessage For="@(() => newUser.UserDesignation)" />
     </div>
 
-    <div class="form-group">
-        <label for="Age">Age:</label>
-        <InputNumber id="Age" @bind-Value="user.Age" class="form-control" />
-        <ValidationMessage For="@(() => user.Age)" />
-    </div>
 
     <div class="form-group">
         <label for="City">City:</label>
-        <InputText id="City" @bind-Value="user.City" class="form-control" />
-        <ValidationMessage For="@(() => user.City)" />
+        <InputText id="City" @bind-Value="newUser.UserCity" class="form-control" />
+        <ValidationMessage For="@(() => newUser.UserCity)" />
     </div>
 
     <button type="submit" class="btn btn-primary">Update</button>

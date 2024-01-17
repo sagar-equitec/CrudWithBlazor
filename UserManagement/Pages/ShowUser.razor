@@ -31,9 +31,9 @@ else
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Age</th>
                 <th>City</th>
                 <th>Designation</th>
+                <th>Skills</th>
                     <th class="center-text">Action</th>
             </tr>
         </thead>
@@ -41,15 +41,16 @@ else
             @foreach (var user in Users)
             {
                 <tr >
-                    <td @onclick="() => GetUser(user.Id)" class="name-hover">@user.Name</td>
-                    <td>@user.Age</td>
-                    <td>@user.City</td>
-                    <td>@user.Designation</td>
+                    <td @onclick="() => GetUser(user.UserId)" class="name-hover">@user.UserName</td>
+                    <td>@user.UserCity</td>
+                    <td>@user.UserDesignation</td>
+                    <td>@empSkillsDictionary[user.UserId]</td>
+                  
                             <td class="center-text">
-                       
-                        <button class="btn btn-danger" @onclick="() => DeleteUser(user.Id)">Delete</button>
 
-                        <button class="btn btn-primary" @onclick="() => UpdateUser(user.Id)">Update</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteUser(user.UserId)">Delete</button>
+
+                        <button class="btn btn-primary" @onclick="() => UpdateUser(user.UserId)">Update</button>
                     </td>
                 </tr>
             }

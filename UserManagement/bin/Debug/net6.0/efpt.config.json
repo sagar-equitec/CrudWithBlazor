@@ -16,39 +16,67 @@
    "T4TemplatePath": null,
    "Tables": [
       {
-         "Name": "[dbo].[Users]",
+         "Name": "[dbo].[skills]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[CreateUser]",
+         "Name": "[dbo].[user]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[user_skills]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AddUserDetails]",
          "ObjectType": 1
       },
       {
-         "Name": "[dbo].[DeletedUsers]",
+         "Name": "[dbo].[AddUserSkill]",
          "ObjectType": 1
       },
       {
-         "Name": "[dbo].[DeleteUser]",
+         "Name": "[dbo].[GetAllSkills]",
          "ObjectType": 1
       },
       {
-         "Name": "[dbo].[GetAllUsers]",
+         "Name": "[dbo].[GetAllUsersDetails]",
          "ObjectType": 1
       },
       {
-         "Name": "[dbo].[GetUserById]",
+         "Name": "[dbo].[GetAllUsersSkills]",
          "ObjectType": 1
       },
       {
-         "Name": "[dbo].[RestoreUser]",
+         "Name": "[dbo].[GetAllUsersWithSkills]",
          "ObjectType": 1
       },
       {
-         "Name": "[dbo].[UpdateUser]",
+         "Name": "[dbo].[GetDeletedRecords]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetEmployeeWithSkills]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetSingleUserDetails]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[InsertEmployeeWithSkills]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SoftDeleteUser]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[UpdateUserWithSkills]",
          "ObjectType": 1
       }
    ],
-   "UiHint": "desktop-6pjqph4.User.dbo",
+   "UiHint": "desktop-6pjqph4.Employee.dbo",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,
