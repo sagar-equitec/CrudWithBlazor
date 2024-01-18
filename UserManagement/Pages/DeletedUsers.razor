@@ -9,9 +9,7 @@
 
 <h3>DeletedUsers</h3>
 
-
-
-@if (Users == null)
+@if (DeletedUserList == null)
 {
     <p>No records found</p>
 }
@@ -27,21 +25,14 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var user in Users)
+            @foreach (var user in DeletedUserList)
             {
                 <tr>
                     <td >@user.UserName</td>
                     <td>@user.UserCity</td>
                     <td>@user.UserDesignation</td>
                     <td>
-
-
-
-                       @* handle restore*@
-                        <button class="btn btn-warning" @onclick="() => RestoreUser(1)">Restore</button>
-
-
-                       
+                        <button class="btn btn-warning" @onclick="() => RestoreUser(user.id)">Restore</button>
                     </td>
                 </tr>
             }

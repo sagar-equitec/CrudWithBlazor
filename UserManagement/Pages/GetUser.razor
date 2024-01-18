@@ -8,12 +8,13 @@
 
 <h3>Get User</h3>
 
-@if (newUser != null)
+@if (userWithSkill != null)
 {
     <ul style="list-style-type: none;">
-        <li><strong>Name:</strong> @newUser.UserName</li>
-        <li><strong>Designation:</strong> @newUser.UserDesignation</li>
-        <li><strong>City:</strong> @newUser.UserCity</li>
+        <li><strong>Name:</strong> @userWithSkill.UserName</li>
+        <li><strong>Designation:</strong> @userWithSkill.UserDesignation</li>
+        <li><strong>City:</strong> @userWithSkill.UserCity</li>
+        <li><strong>skills:</strong> @skillname</li>
        
     </ul>
     <button class="btn btn-success" @onclick="() => BackToUserList()">Back to list</button>

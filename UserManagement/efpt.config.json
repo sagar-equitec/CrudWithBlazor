@@ -68,6 +68,10 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[RestoreEmployee]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[SoftDeleteUser]",
          "ObjectType": 1
       },

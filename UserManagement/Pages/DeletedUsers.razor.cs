@@ -1,20 +1,19 @@
-﻿using Microsoft.JSInterop;
-using UserManagement.Models;
+﻿using UserManagement.Models;
 
 
 namespace UserManagement.Pages
 {
     public partial class DeletedUsers
     {
-        private List<GetDeletedRecordsResult>? Users;
+        private List<GetDeletedRecordsResult>? DeletedUserList;
 
         protected override async Task OnInitializedAsync()
         {
-            Users = await userService.GetDeletedUsers();
+            DeletedUserList = await userService.GetDeletedUsers();
         }
         private async Task RestoreUser(int userId)
         {
-           /* bool flag = await userService.RestoreUserAsync(userId);*/
+            bool flag = await userService.RestoreUserAsync(userId);
             NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
         }
 

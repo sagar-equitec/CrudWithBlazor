@@ -5,56 +5,43 @@ namespace UserManagement.Pages
 {
     public partial class AddUser
     {
-        private User user = new User();
-        private List<GetAllUsersSkillsResult> getskills = new List<GetAllUsersSkillsResult>();
-        public List<int> getSelected { get; set; } = new List<int>();
-        public string? selectedids;
+        private User _user = new User();
+        private List<GetAllSkillsResult> skillList = new List<GetAllSkillsResult>();
+        private List<int> _selectedSkillsList = new List<int>();
 
+        private void ToggleSkill(int skillId)
+        {
+            if (_selectedSkillsList.Contains(skillId))
+            {
+                _selectedSkillsList.Remove(skillId);
+            }
+            else
+            {
+                _selectedSkillsList.Add(skillId);
+            }
+            StateHasChanged();
+        }
         protected override async Task OnInitializedAsync()
         {
-
-            getskills = await userService.GetAllSkillAsync();
-        }
-
-
-        public void CheckboxClicked(int skillid, object checkedValue)
-        {
-            if ((bool)checkedValue)
-            {
-
-                getSelected.Add(skillid);
-
-            }
-
-            foreach (var item in getSelected) 
-            {
-                selectedids = selectedids + "," + item;
-            }
+            skillList = await userService.GetAllSkillAsync();
         }
 
         private async void HandleValidSubmit()
         {
             try
             {
-
-                bool isUserAdded = await userService.AddUserAsync(user, selectedids);
+                bool isUserAdded = await userService.AddUserAsync(_user);
 
                 if (isUserAdded)
                 {
-                   
-                    int userId = user.Id;
+                    int? userId = await userService.GetEmployeeByNameAsync(_user.Name, _user.Designation, _user.City);
 
-                   
-                    foreach (int skillId in getSelected)
+                    foreach (int skillId in _selectedSkillsList)
                     {
                         await userService.AddUserSkillAsync(userId, skillId);
                     }
 
-                 
-                 
-                    user = new User();
-
-                   
+                    _user = new User();
                     await JSRuntime.InvokeVoidAsync("alert", "User added successfully");
                 }
                 else
@@ -64,9 +51,9 @@ namespace UserManagement.Pages
             }
             catch (Exception ex)
             {
-                // Handle exception, log, etc.
                 Console.WriteLine($"Error handling valid submit: {ex.Message}");
             }
         }
+
     }
 }

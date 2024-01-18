@@ -8,20 +8,24 @@ namespace UserManagement.Pages
     {
         [Parameter]
         public int Id { get; set; }
-
-        private List<GetEmployeeWithSkillsResult> user = new List<GetEmployeeWithSkillsResult>();
-        private GetEmployeeWithSkillsResult newUser = new GetEmployeeWithSkillsResult();
-        private List<string> skills = new List<string>();
+        private List<GetEmployeeWithSkillsResult> userWithSkillList = new List<GetEmployeeWithSkillsResult>();
+        private GetEmployeeWithSkillsResult userWithSkill = new GetEmployeeWithSkillsResult();
+        private List<Skill> skillsList = new List<Skill>();
+        private string? skillname;
 
         protected override async Task OnInitializedAsync()
         {
-
-            user = await userService.GetUserByIdAsync(Id);
-            foreach (var item in user)
+            userWithSkillList = await userService.GetUserByIdAsync(Id);
+            skillsList = await userService.GetUsersSkills(Id);
+            foreach (var skill in skillsList)
             {
-                newUser = item;
-                skills.Add(item.SkillName);
+                skillname = skill.Skill1 + ", " + skillname;
             }
+            skillname = skillname.Substring(0, skillname.Length - 2);
+            foreach (var item in userWithSkillList)
+            {
+                userWithSkill = item; 
+            } 
         }
         private void BackToUserList()
         {

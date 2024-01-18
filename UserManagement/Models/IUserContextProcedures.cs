@@ -12,7 +12,7 @@ namespace UserManagement.Models
 {
     public partial interface IUserContextProcedures
     {
-        Task<int> AddUserDetailsAsync(string Name, string Designation, string City, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<AddUserDetailsResult>> AddUserDetailsAsync(string Name, string Designation, string City, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> AddUserSkillAsync(int? UserId, int? SkillId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<GetAllSkillsResult>> GetAllSkillsAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<GetAllUsersDetailsResult>> GetAllUsersDetailsAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
@@ -22,6 +22,7 @@ namespace UserManagement.Models
         Task<List<GetEmployeeWithSkillsResult>> GetEmployeeWithSkillsAsync(int? UserId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<GetSingleUserDetailsResult>> GetSingleUserDetailsAsync(int? UserId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> InsertEmployeeWithSkillsAsync(string UserName, string Designation, string City, string SkillIds, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> RestoreEmployeeAsync(int? Id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> SoftDeleteUserAsync(int? UserId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> UpdateUserWithSkillsAsync(int? UserId, string UserName, string Designation, string City, string NewSkillIds, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
     }

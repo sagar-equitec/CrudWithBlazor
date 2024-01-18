@@ -5,13 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UserManagement.Models
 {
-    public partial class GetDeletedRecordsResult
+    public partial class AddUserDetailsResult
     {
         public int id { get; set; }
-        public string UserName { get; set; }
-        public string UserDesignation { get; set; }
-        public string UserCity { get; set; }
-        public int? SkillId { get; set; }
-        public string SkillName { get; set; }
     }
 }

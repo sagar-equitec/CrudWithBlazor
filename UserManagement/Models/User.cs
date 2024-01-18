@@ -8,7 +8,6 @@ namespace UserManagement.Models;
 
 public partial class User
 {
-   
     public int Id { get; set; }
 
     [Required(ErrorMessage = "Name is required.")]
@@ -23,6 +22,4 @@ public partial class User
     public bool? IsActive { get; set; }
 
     public virtual ICollection<Skill> Skills { get; set; } = new List<Skill>();
-
-   
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YEv/kJ75/s6nORPQcbds7cYZ1Tc8SUH2m03eFSzPLnA=",
+  "Hash": "ePETeH+tCZiL7zc0fNLpv/f//WJHtA8wpxVH3svNFng=",
   "Source": "UserManagement",
   "BasePath": "_content/UserManagement",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "UserManagement\\wwwroot",
       "Source": "UserManagement",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\obj\\Debug\\net6.0\\scopedcss\\bundle\\UserManagement.styles.css",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\obj\\Debug\\net6.0\\scopedcss\\bundle\\UserManagement.styles.css",
       "SourceId": "UserManagement",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "UserManagement.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\obj\\Debug\\net6.0\\scopedcss\\bundle\\UserManagement.styles.css"
+      "OriginalItemSpec": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\obj\\Debug\\net6.0\\scopedcss\\bundle\\UserManagement.styles.css"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\UserManagement.bundle.scp.css",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\UserManagement.bundle.scp.css",
       "SourceId": "UserManagement",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "UserManagement.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\UserManagement.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\UserManagement.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\css\\site.css",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\favicon.ico",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\Newchangedfinalblazor\\CrudWithBlazor\\UserManagement\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equi-456\\Desktop\\New folder\\CrudWithBlazor\\UserManagement\\wwwroot\\",
       "BasePath": "_content/UserManagement",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
