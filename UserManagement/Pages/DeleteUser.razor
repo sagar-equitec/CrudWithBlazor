@@ -1,0 +1,46 @@
+﻿
+@page "/deleteuser"
+
+<title>DeleteUsers</title>
+
+@using UserManagement.Models
+@using UserManagement.Data
+@inject NavigationManager NavigationManager
+@inject UserService userService
+
+<h3>DeleteUsers</h3>
+
+@if (UserList == null)
+{
+    <p>No records found</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Designation</th>
+                <th>Skills</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in UserList)
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>@user.UserCity</td>
+                    <td>@user.UserDesignation</td>
+                    <td>@empSkillsDictionary[user.UserId]</td>
+                    <td>
+                        <button class="btn btn-danger" @onclick="() => DeleteUserById(user.UserId)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+

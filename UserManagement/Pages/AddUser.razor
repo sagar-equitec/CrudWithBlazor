@@ -9,34 +9,95 @@
 <EditForm Model="@_user" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
 
-    <div class="form-group">
-        <label for="Name">Name:</label>
-        <InputText id="Name" @bind-Value="_user.Name" class="form-control" />
-        <ValidationMessage For="@(() => _user.Name)" />
+    @* <div class="form-group">
+    <label for="Name">Name:</label>
+    <InputText id="Name" @bind-Value="_user.Name" class="form-control" />
+    <ValidationMessage For="@(() => _user.Name)" />
     </div>
 
     <div class="form-group">
-        <label for="Designation">Designation:</label>
-        <InputText id="Designation" @bind-Value="_user.Designation" class="form-control" />
-        <ValidationMessage For="@(() => _user.Designation)" />
+    <label for="Designation">Designation:</label>
+    <InputText id="Designation" @bind-Value="_user.Designation" class="form-control" />
+    <ValidationMessage For="@(() => _user.Designation)" />
     </div>
 
     <div class="form-group">
-        <label for="City">City:</label>
-        <InputText id="City" @bind-Value="_user.City" class="form-control" />
-        <ValidationMessage For="@(() => _user.City)" />
+    <label for="City">City:</label>
+    <InputText id="City" @bind-Value="_user.City" class="form-control" />
+    <ValidationMessage For="@(() => _user.City)" />
     </div>
     <div class="form-group">
-        <label for="Skills">Skills:</label>
-        @foreach (var skill in skillList)
-        {
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" @onclick="() => ToggleSkill(skill.SkillId)" />
-                <label class="form-check-label">@skill.SkillName</label>
+    <label for="Skills">Skills:</label>
+    @foreach (var skill in skillList)
+    {
+    <div class="form-check">
+    <input type="checkbox" class="form-check-input" @onclick="() => ToggleSkill(skill.SkillId)" />
+    <label class="form-check-label">@skill.SkillName</label>
+    </div>
+    }
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>*@
+    <ul class="row forumBox">
+        <li class="col-3 required">
+            <label class="inputLabel">Name</label>
+        </li>
+        <li class="col-3">
+            <div class="form_inputBox">
+                <InputText @bind-Value="_user.Name" class="form-control" />
             </div>
-        }
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="erroeText">
+                <ValidationMessage For="(() => _user.Name)"></ValidationMessage>
+            </div>
+        </li>
+
+        <li class="col-3 required">
+            <label class="inputLabel">Designation</label>
+        </li>
+        <li class="col-3">
+            <div class="form_inputBox">
+                <InputText @bind-Value="_user.Designation" class="form-control" />
+            </div>
+            <div class="erroeText">
+                <ValidationMessage For="(() => _user.Designation)"></ValidationMessage>
+            </div>
+        </li>
+        <li class="col-3 required">
+            <label class="inputLabel">City</label>
+        </li>
+        <li class="col-3">
+            <div class="form_inputBox">
+                <InputText @bind-Value="_user.City" class="form-control" />
+            </div>
+            <div class="erroeText">
+                <ValidationMessage For="(() => _user.City)"></ValidationMessage>
+            </div>
+        </li>
+        <li class="col-6"></li>
+        <li class="col-3">
+            <div class="form-group">
+                <div class="form_inputBox">
+                    <label for="Skills">Skills:</label>
+                </div>
+                <div style="diplay:block">
+                    @foreach (var skill in skillList)
+                    {
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" @onclick="() => ToggleSkill(skill.SkillId)" />
+                            <label class="inputLabel">@skill.SkillName</label>
+                        </div>
+                    }
+                </div>
+            </div>
+        </li>
+
+        <li class="col-12 mt_20">
+            <div class="form_btns">
+                <button type="submit" class="common_btn btnBlue">Save</button>
+                @* <button type="reset" class="common_btn btnGry" @onclick="OnResetClicked">Reset</button>
+                <button type="button" class="common_btn btnWhite" @onclick="OnCancelClicked">Cancel</button>*@
+            </div>
+        </li>
+    </ul>
 </EditForm>
 
 

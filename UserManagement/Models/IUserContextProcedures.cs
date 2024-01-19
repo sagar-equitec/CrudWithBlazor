@@ -14,6 +14,7 @@ namespace UserManagement.Models
     {
         Task<List<AddUserDetailsResult>> AddUserDetailsAsync(string Name, string Designation, string City, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> AddUserSkillAsync(int? UserId, int? SkillId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> deleteSkillsAsync(int? userid, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<GetAllSkillsResult>> GetAllSkillsAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<GetAllUsersDetailsResult>> GetAllUsersDetailsAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<GetAllUsersSkillsResult>> GetAllUsersSkillsAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);

@@ -1,4 +1,7 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@inject NavigationManager NavigationManager
+
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">UserManagement</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -14,31 +17,40 @@
                 <span class="oi oi-home" aria-hidden="true"></span> Home
             </NavLink>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
+        <div class="sidebar_list my-scrollbar nav-item px-3">
+            <div class="leftBox">
+                <h6 class="color_white bg_accent sidebar_dropdown has_list" @onclick="ToggleDropdown">
+                    <span class="oi oi-person" aria-hidden="true"></span> User <span class="oi oi-caret-bottom" style="font-size: 0.6em;
+        margin-left: 5px; padding-top:5px;" aria-hidden="true"></span>
+                </h6>
+                <div class="hidden_list" style="display: @listDisplay">
+                    <h6 class="color_title sidebar_dropdown">
+                        <a href="fetchuser">
+                            <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch user
+                        </a>
+                    </h6>
+                    <h6 class="color_title sidebar_dropdown">
+                        <a href="adduser">
+                            <span class="oi oi-list-rich" aria-hidden="true"></span> Add user
+                        </a>
+                    </h6>
+                    <h6 class="color_title sidebar_dropdown">
+                        <a href="deleteduser">
+                            <span class="oi oi-list-rich" aria-hidden="true"></span> Deleted Records
+                        </a>
+                    </h6>
+                    <h6 class="color_title sidebar_dropdown">
+                        <a href="deleteuser">
+                            <span class="oi oi-list-rich" aria-hidden="true"></span> Delete user
+                        </a>
+                    </h6>
+                    <h6 class="color_title sidebar_dropdown" @onclick="GoToUpdateUser">
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> Update user
+                    </h6>
+                </div>
+            </div>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchuser">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch user
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="adduser">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Add user
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="deleteduser">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Deleted Records
-            </NavLink>
-        </div>
+
     </nav>
 </div>
 

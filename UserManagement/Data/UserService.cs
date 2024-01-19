@@ -23,6 +23,8 @@ namespace UserManagement.Data
             return await _userContext.Procedures.GetAllSkillsAsync();
         }
 
+
+
         //GET USERS SKILLS
         public async Task<List<Skill>> GetUsersSkills(int userId)
         {
@@ -65,11 +67,16 @@ namespace UserManagement.Data
         {
             return await _userContext.Procedures.GetEmployeeWithSkillsAsync(id);
         }
+        public async Task<List<GetSingleUserDetailsResult>> GetSingleUserByIdAsync(int id)
+        {
+            return await _userContext.Procedures.GetSingleUserDetailsAsync(id);
+        }
+
 
         //update emp
-        public async Task<bool> UpdateUserAsync(GetEmployeeWithSkillsResult GetUserByIdResult)
+        public async Task<bool> UpdateUserAsync(GetSingleUserDetailsResult GetUserByIdResult,string skillids)
         {
-            await _userContext.Procedures.UpdateUserWithSkillsAsync(GetUserByIdResult.UserId, GetUserByIdResult.UserName, GetUserByIdResult.UserDesignation, GetUserByIdResult.UserCity, "4,5,6");
+            await _userContext.Procedures.UpdateUserWithSkillsAsync(GetUserByIdResult.UserId, GetUserByIdResult.UserName, GetUserByIdResult.UserDesignation, GetUserByIdResult.UserCity, skillids);
             return true;
         }
 
@@ -77,6 +84,11 @@ namespace UserManagement.Data
         public async Task<List<GetDeletedRecordsResult>> GetDeletedUsers()
         {
             return await _userContext.Procedures.GetDeletedRecordsAsync();
+        }
+
+        public async Task DeleteSkillsById (int userid)
+        {
+             await _userContext.Procedures.deleteSkillsAsync(userid);
         }
 
         public async Task AddUserSkillAsync(int? userId, int skillId)

@@ -1,0 +1,26 @@
+﻿@page "/deleteuserbyid/{id:int}"
+
+@using UserManagement.Models
+@using UserManagement.Data
+@inject IJSRuntime JSRuntime
+@inject UserService userService
+@inject NavigationManager NavigationManager
+
+<h3>Get User</h3>
+
+@if (userWithSkill != null)
+{
+        <ul style="list-style-type: none;">
+            <li><strong>Name:</strong> @userWithSkill.UserName</li>
+            <li><strong>Designation:</strong> @userWithSkill.UserDesignation</li>
+            <li><strong>City:</strong> @userWithSkill.UserCity</li>
+            <li><strong>skills:</strong> @skillname</li>
+
+        </ul>
+       <button class="btn btn-danger" @onclick="() => DeletedUsersById(userWithSkill.UserId)">Delete</button>
+        <button class="btn btn-secondary" @onclick="() => HandleCancel()">Cancel</button>
+}
+else
+{
+        <p>User not found.</p>
+}

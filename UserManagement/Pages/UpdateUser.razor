@@ -4,6 +4,7 @@
 @using UserManagement.Data
 @inject IJSRuntime JSRuntime
 @inject UserService userService
+@inject NavigationManager NavigationManager
 
 <h3>Edit User</h3>
 
@@ -38,7 +39,7 @@
         @foreach (var skill in _getskills)
         {
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" @checked="selectedSkills.Contains(skill.SkillId)" @onclick="() => ToggleSkilll(skill.SkillId)" />
+                <input type="checkbox" class="form-check-input" @onclick="() => ToggleSkilll(skill.SkillId)" checked="@(_selectedSkills.Contains(skill.SkillId))"/>
                 <label class="form-check-label">@skill.SkillName</label>
             </div>
         }

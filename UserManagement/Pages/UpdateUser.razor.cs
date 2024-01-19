@@ -8,24 +8,28 @@ namespace UserManagement.Pages
     {
         [Parameter]
         public int Id { get; set; }
-
-        private List<GetEmployeeWithSkillsResult> _user = new List<GetEmployeeWithSkillsResult>();
-        private GetEmployeeWithSkillsResult _newUser = new GetEmployeeWithSkillsResult();
+        private List<GetSingleUserDetailsResult> _user = new List<GetSingleUserDetailsResult>();
+        private GetSingleUserDetailsResult _newUser = new GetSingleUserDetailsResult();
         private List<string> _skills = new List<string>();
         private List<GetAllSkillsResult> _getskills = new List<GetAllSkillsResult>();
         private List<int> _selectedSkills = new List<int>();
-        private List<Skill> _userSkills = new List<Skill>();
+        private List<Skill> _userSkillsList = new List<Skill>();
+        private string? skillids;
 
         protected override async Task OnInitializedAsync()
         {
-
-            _user = await userService.GetUserByIdAsync(Id);
+            _user = await userService.GetSingleUserByIdAsync(Id);
             _getskills = await userService.GetAllSkillAsync();
-            _userSkills = await userService.GetUsersSkills(Id);
+            _userSkillsList = await userService.GetUsersSkills(Id);
 
-            foreach (var userSkill in _userSkills)
+            foreach (var userSkill in _userSkillsList)
             {
                 _selectedSkills.Add(userSkill.Skillid);
+            }
+            foreach (var item in _user)
+            {
+                _newUser = item;
+                
             }
         }
         bool isUserUpdated;
@@ -44,22 +48,30 @@ namespace UserManagement.Pages
         }
         private async Task HandleValidSubmit()
         {
-            foreach (var item in _user)
-            {
-                _newUser = item;
-                _skills.Add(item.SkillName);
-            }
+            await userService.DeleteSkillsById(Id);
 
-            isUserUpdated = await userService.UpdateUserAsync(_newUser);
+            foreach (var skill in _selectedSkills)
+            {
+
+                skillids = skill + ","+ skillids;
+                
+                /*await userService.AddUserSkillAsync(_newUser.UserId, skill);*/
+            }
+            skillids = skillids.Substring(0, skillids.Length - 1);
+            Console.WriteLine(skillids);
+
+            isUserUpdated = await userService.UpdateUserAsync(_newUser, skillids);
 
             if (isUserUpdated)
             {
                 await JSRuntime.InvokeVoidAsync("alert", "User updated successfully");
+                NavigationManager.NavigateTo($"/updateuser");
             }
             else
             {
                 Console.WriteLine("Failed to update user.");
             }
+
         }
     }
 }

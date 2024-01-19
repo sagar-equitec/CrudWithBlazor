@@ -112,15 +112,15 @@ main[b-zrq6z71zp4] {
         line-height: 3rem;
     }
 
-.nav-item[b-kq8u4f5k2n]  a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
-}
+        .nav-item[b-kq8u4f5k2n]  a.active {
+            background-color: rgba(255,255,255,0.25);
+            color: white;
+        }
 
-.nav-item[b-kq8u4f5k2n]  a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-}
+        .nav-item[b-kq8u4f5k2n]  a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
 
 @media (min-width: 641px) {
     .navbar-toggler[b-kq8u4f5k2n] {
@@ -130,5 +130,11 @@ main[b-zrq6z71zp4] {
     .collapse[b-kq8u4f5k2n] {
         /* Never collapse the sidebar for wide screens */
         display: block;
+    }
+
+    .nav-scrollable[b-kq8u4f5k2n] {
+        /* Allow sidebar to scroll for tall menus */
+        height: calc(100vh - 3.5rem);
+        overflow-y: auto;
     }
 }

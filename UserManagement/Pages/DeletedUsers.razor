@@ -6,6 +6,7 @@
 @using UserManagement.Data
 @inject NavigationManager NavigationManager
 @inject UserService userService
+@inject IJSRuntime JSRuntime
 
 <h3>DeletedUsers</h3>
 
@@ -21,16 +22,18 @@ else
                 <th>Name</th>
                 <th>City</th>
                 <th>Designation</th>
+                <th>Skills</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var user in DeletedUserList)
+            @foreach (var user in DeletedUserListUpdated)
             {
                 <tr>
                     <td >@user.UserName</td>
                     <td>@user.UserCity</td>
                     <td>@user.UserDesignation</td>
+                    <td>@empSkillsDictionary[user.id]</td>
                     <td>
                         <button class="btn btn-warning" @onclick="() => RestoreUser(user.id)">Restore</button>
                     </td>

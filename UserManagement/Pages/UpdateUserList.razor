@@ -1,0 +1,61 @@
+﻿
+@page "/updateuser"
+
+<title>Update User</title>
+
+@using UserManagement.Models
+@using UserManagement.Data
+@inject NavigationManager NavigationManager
+@inject UserService userService
+<style>
+    .name-hover:hover {
+        color: green;
+        cursor: pointer;
+    }
+     .center-text {
+        text-align: center;
+    }
+</style>
+
+<h1>Update User List</h1>
+
+
+
+@if (UsersList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Designation</th>
+                <th>Skills</th>
+                    <th class="center-text">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in UsersList)
+            {
+                <tr >
+                    <td class="name-hover">@user.UserName</td>
+                    <td>@user.UserCity</td>
+                    <td>@user.UserDesignation</td>
+                    <td>@empSkillsDictionary[user.UserId]</td>
+                  
+                            <td class="center-text">
+
+                     
+
+                        <button class="btn btn-primary" @onclick="() => UpdateUser(user.UserId)">Update</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
