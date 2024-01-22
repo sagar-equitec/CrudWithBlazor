@@ -73,5 +73,9 @@ namespace UserManagement.Pages
             }
 
         }
+        private void OnCancelClicked()
+        {
+            NavigationManager.NavigateTo($"/updateuser");
+        }
     }
 }

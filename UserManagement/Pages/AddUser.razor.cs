@@ -1,4 +1,5 @@
-﻿using Microsoft.JSInterop;
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using UserManagement.Models;
 
 namespace UserManagement.Pages
@@ -53,6 +54,10 @@ namespace UserManagement.Pages
             {
                 Console.WriteLine($"Error handling valid submit: {ex.Message}");
             }
+        }
+        private void OnCancelClicked()
+        {
+            NavigationManager.NavigateTo($"/");
         }
 
     }

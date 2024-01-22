@@ -6,47 +6,138 @@
 @inject UserService userService
 @inject NavigationManager NavigationManager
 
-<h3>Edit User</h3>
+<h1 class="colorBlue">
+    Edit User
+</h1>
 
 <EditForm Model="@_newUser" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-    <div class="form-group">
-        <label for="Name">Name:</label>
-        <InputText id="Name" @bind-Value="_newUser.UserName" class="form-control" />
-        <ValidationMessage For="@(() => _newUser.UserName)" />
+    @*<div class="form-group">
+    <label for="Name">Name:</label>
+    <InputText id="Name" @bind-Value="_newUser.UserName" class="form-control" />
+    <ValidationMessage For="@(() => _newUser.UserName)" />
     </div>
 
     <div class="form-group">
-        <label for="Designation">Designation:</label>
-        <InputText id="Designation" @bind-Value="_newUser.UserDesignation" class="form-control" />
-        <ValidationMessage For="@(() => _newUser.UserDesignation)" />
+    <label for="Designation">Designation:</label>
+    <InputText id="Designation" @bind-Value="_newUser.UserDesignation" class="form-control" />
+    <ValidationMessage For="@(() => _newUser.UserDesignation)" />
     </div>
 
 
     <div class="form-group">
-        <label for="City">City:</label>
-        <InputText id="City" @bind-Value="_newUser.UserCity" class="form-control" />
-        <ValidationMessage For="@(() => _newUser.UserCity)" />
+    <label for="City">City:</label>
+    <InputText id="City" @bind-Value="_newUser.UserCity" class="form-control" />
+    <ValidationMessage For="@(() => _newUser.UserCity)" />
     </div>
 
     <div class="form-group">
-        <label for="Skills">Skills:</label>
+    <label for="Skills">Skills:</label>
 
 
 
-        @foreach (var skill in _getskills)
-        {
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" @onclick="() => ToggleSkilll(skill.SkillId)" checked="@(_selectedSkills.Contains(skill.SkillId))"/>
-                <label class="form-check-label">@skill.SkillName</label>
+    @foreach (var skill in _getskills)
+    {
+    <div class="form-check">
+    <input type="checkbox" class="form-check-input" @onclick="() => ToggleSkilll(skill.SkillId)" checked="@(_selectedSkills.Contains(skill.SkillId))"/>
+    <label class="form-check-label">@skill.SkillName</label>
+    </div>
+    }
+
+
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>*@
+
+
+
+
+
+
+
+
+
+
+
+
+    <ul class="row forumBox">
+        <li class="col-3 required">
+            <label class="inputLabel">Name</label>
+        </li>
+        <li class="col-3">
+            <div class="form_inputBox">
+                <InputText @bind-Value="_newUser.UserName" class="form-control" />
             </div>
-        }
+            <div class="erroeText">
+                <ValidationMessage For="(() =>_newUser.UserName)"></ValidationMessage>
+            </div>
+        </li>
+        <li class="col-6">
+
+        </li>
+
+        <li class="col-3 required">
+            <label class="inputLabel">Designation</label>
+        </li>
+        <li class="col-3">
+            <div class="form_inputBox">
+                <InputText @bind-Value="_newUser.UserDesignation" class="form-control" />
+            </div>
+            <div class="erroeText">
+                <ValidationMessage For="(() => _newUser.UserDesignation)"></ValidationMessage>
+            </div>
+        </li>
+        <li class="col-6">
+
+        </li>
+        <li class="col-3 required">
+            <label class="inputLabel">City</label>
+        </li>
+        <li class="col-3">
+            <div class="form_inputBox">
+                <InputText @bind-Value="_newUser.UserCity" class="form-control" />
+            </div>
+            <div class="erroeText">
+                <ValidationMessage For="(() => _newUser.UserCity)"></ValidationMessage>
+            </div>
+        </li>
+        <li class="col-6"></li>
+        <li class="col-3">
+            <div class="form-group">
+                <div class="form_inputBox">
+                    <label for="Skills">Skills:</label>
+                </div>
+                <div class="d-flex">
+                    @foreach (var skill in _getskills)
+                    {
+                        <div class="radio_check d-flex align_center">
+                            <input type="checkbox" class="form-check-input" @onclick="() => ToggleSkilll(skill.SkillId)" checked="@(_selectedSkills.Contains(skill.SkillId))" />
+                            <div class="pr-2"></div>
+                            <div class="pb-3">
+                                <label class="inputLabel">
+                                    @skill.SkillName
+                                </label>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </li>
+
+        <li class="col-12 mt_20">
+            <div class="form_btns">
+                <button type="submit" class="common_btn btnBlue">Update</button>
+                <button type="button" class="common_btn btnWhite" @onclick="OnCancelClicked">Cancel</button>
+            </div>
+        </li>
+    </ul>
 
 
 
-    </div>
 
-    <button type="submit" class="btn btn-primary">Update</button>
+
+
 </EditForm>

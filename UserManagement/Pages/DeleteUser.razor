@@ -8,7 +8,8 @@
 @inject NavigationManager NavigationManager
 @inject UserService userService
 
-<h3>DeleteUsers</h3>
+
+<h4 class="popup_title bg_primary">Delete Users</h4>
 
 @if (UserList == null)
 {
@@ -16,7 +17,7 @@
 }
 else
 {
-    <table class="table">
+    @*<table class="table">
         <thead>
             <tr>
                 <th>Name</th>
@@ -41,6 +42,35 @@ else
             }
         </tbody>
     </table>
+*@
+
+    <div>
+        <table class="employee_table">
+            <thead>
+                <tr>
+                    <th width="20%" class="color_title">Name</th>
+                    <th width="20%" class="color_title">City</th>
+                    <th width="20%" class="color_title">Designation</th>
+                    <th width="60%" class="color_title">Skills</th>
+                    <th width="60%" class="color_title">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in UserList)
+                {
+                    <tr @onclick="() => DeleteUserById(user.UserId)">
+                        <td width="20%" class="color_title">@user.UserName</td>
+                        <td width="20%" class="color_title">@user.UserCity</td>
+                        <td width="20%" class="color_title">@user.UserDesignation</td>
+                        <td width="60%" class="color_title">@empSkillsDictionary[user.UserId]</td>
+                        <td width="60%" class="color_title">
+                            <button class="btn btn-danger" @onclick="() => DeleteUserById(user.UserId)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
 
 

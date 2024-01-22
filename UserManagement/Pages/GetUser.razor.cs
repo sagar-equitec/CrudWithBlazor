@@ -29,7 +29,7 @@ namespace UserManagement.Pages
         }
         private void BackToUserList()
         {
-            NavigationManager.NavigateTo($"/fetchuser");
+            NavigationManager.NavigateTo($"/");
         }
     }
 }

@@ -10,14 +10,70 @@
 
 @if (userWithSkill != null)
 {
-    <ul style="list-style-type: none;">
-        <li><strong>Name:</strong> @userWithSkill.UserName</li>
-        <li><strong>Designation:</strong> @userWithSkill.UserDesignation</li>
-        <li><strong>City:</strong> @userWithSkill.UserCity</li>
-        <li><strong>skills:</strong> @skillname</li>
-       
-    </ul>
-    <button class="btn btn-success" @onclick="() => BackToUserList()">Back to list</button>
+     <EditForm Model="@userWithSkill">
+        <ul class="row forumBox">
+            <li class="col-3">
+                <label class="inputLabel">
+                    Name
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <InputText @bind-Value="userWithSkill.UserName" class="form-control" disabled="disabled" />
+                </div>
+            </li>
+            <li class="col-6">
+
+            </li>
+            <li class="col-3">
+                <label class="inputLabel">
+                    City
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <InputText @bind-Value="userWithSkill.UserCity" class="form-control" disabled="disabled" />
+                </div>
+            </li>
+            <li class="col-6">
+
+            </li>
+            <li class="col-3">
+                <label class="inputLabel">
+                    Designation
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <div class="dropdowns">
+                        <InputText @bind-Value="userWithSkill.UserDesignation" class="form-control" disabled="disabled" />
+                    </div>
+                </div>
+            </li>
+            <li class="col-6">
+
+            </li>
+
+            <li class="col-3">
+                <label class="inputLabel">
+                    skills
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <InputText @bind-Value="skillname" class="form-control" disabled="disabled" />
+                </div>
+            </li>
+
+
+            <li class="col-12 mt_20">
+                <div class="form_btns">
+                    <button class="btn btn-success" @onclick="() => BackToUserList()">Back to list</button>
+                </div>
+            </li>
+        </ul>
+    </EditForm>
+
 }
 else
 {

@@ -19,5 +19,17 @@ namespace UserManagement.Shared
         {
             NavigationManager.NavigateTo("/deleteuser");
         }
+        private void GoToRestoreUser()
+        {
+            NavigationManager.NavigateTo("/deleteduser");
+        }
+        private void GoToAllUser()
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        private void GoToAddUser()
+        {
+            NavigationManager.NavigateTo("/adduser");
+        }
     }
 }

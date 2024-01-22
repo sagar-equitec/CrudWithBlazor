@@ -7,18 +7,8 @@
 @using UserManagement.Data
 @inject NavigationManager NavigationManager
 @inject UserService userService
-<style>
-    .name-hover:hover {
-        color: green;
-        cursor: pointer;
-    }
-     .center-text {
-        text-align: center;
-    }
-</style>
 
-<h1>Update User List</h1>
-
+<h4 class="popup_title bg_primary">Update User List</h4>
 
 
 @if (UsersList == null)
@@ -27,35 +17,33 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>City</th>
-                <th>Designation</th>
-                <th>Skills</th>
-                    <th class="center-text">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var user in UsersList)
-            {
-                <tr >
-                    <td class="name-hover">@user.UserName</td>
-                    <td>@user.UserCity</td>
-                    <td>@user.UserDesignation</td>
-                    <td>@empSkillsDictionary[user.UserId]</td>
-                  
-                            <td class="center-text">
-
-                     
-
-                        <button class="btn btn-primary" @onclick="() => UpdateUser(user.UserId)">Update</button>
-                    </td>
+    <div>
+        <table class="employee_table">
+            <thead>
+                <tr>
+                    <th width="20%" class="color_title">Name</th>
+                    <th width="20%" class="color_title">City</th>
+                    <th width="20%" class="color_title">Designation</th>
+                    <th width="60%" class="color_title">Skills</th>
+                    <th width="60%" class="color_title">Actions</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var user in UsersList)
+                {
+                    <tr  @onclick="() => UpdateUser(user.UserId)">
+                        <td width="20%" class="color_title">@user.UserName</td>
+                        <td width="20%" class="color_title">@user.UserCity</td>
+                        <td width="20%" class="color_title">@user.UserDesignation</td>
+                        <td width="60%" class="color_title">@empSkillsDictionary[user.UserId]</td>
+                        <td width="60%" class="color_title">
+                            <button class="btn btn-danger" @onclick="() => UpdateUser(user.UserId)">Update</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
 
 

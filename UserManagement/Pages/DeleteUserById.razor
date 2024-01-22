@@ -6,11 +6,14 @@
 @inject UserService userService
 @inject NavigationManager NavigationManager
 
-<h3>Get User</h3>
+
+<h1 class="colorBlue">
+    Delete User
+</h1>
 
 @if (userWithSkill != null)
 {
-        <ul style="list-style-type: none;">
+    @* <ul style="list-style-type: none;">
             <li><strong>Name:</strong> @userWithSkill.UserName</li>
             <li><strong>Designation:</strong> @userWithSkill.UserDesignation</li>
             <li><strong>City:</strong> @userWithSkill.UserCity</li>
@@ -18,9 +21,85 @@
 
         </ul>
        <button class="btn btn-danger" @onclick="() => DeletedUsersById(userWithSkill.UserId)">Delete</button>
-        <button class="btn btn-secondary" @onclick="() => HandleCancel()">Cancel</button>
+        <button class="btn btn-secondary" @onclick="() => HandleCancel()">Cancel</button>*@
+
+
+
+
+
+
+
+
+    <EditForm Model="@userWithSkill">
+        <ul class="row forumBox">
+            <li class="col-3">
+                <label class="inputLabel">
+                    Name
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <InputText @bind-Value="userWithSkill.UserName" class="form-control" disabled="disabled" />
+                </div>
+            </li>
+            <li class="col-6">
+
+            </li>
+            <li class="col-3">
+                <label class="inputLabel">
+                    City
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <InputText @bind-Value="userWithSkill.UserCity" class="form-control" disabled="disabled" />
+                </div>
+            </li>
+            <li class="col-6">
+
+            </li>
+            <li class="col-3">
+                <label class="inputLabel">
+                    Designation
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <div class="dropdowns">
+                        <InputText @bind-Value="userWithSkill.UserDesignation" class="form-control" disabled="disabled" />
+                    </div>
+                </div>
+            </li>
+            <li class="col-6">
+
+            </li>
+
+            <li class="col-3">
+                <label class="inputLabel">
+                    skills
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <InputText @bind-Value="skillname" class="form-control" disabled="disabled" />
+                </div>
+            </li>
+
+
+            <li class="col-12 mt_20">
+                <div class="form_btns">
+                    <button class="common_btn btnBlue" @onclick="() => DeletedUsersById(userWithSkill.UserId)">Delete</button>
+
+                    <button type="button" class="common_btn btnGry" @onclick="HandleCancel">Cancel</button>
+                </div>
+            </li>
+        </ul>
+    </EditForm>
+
+
+
 }
 else
 {
-        <p>User not found.</p>
+    <p>User not found.</p>
 }
