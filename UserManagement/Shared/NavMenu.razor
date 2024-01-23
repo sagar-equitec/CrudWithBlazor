@@ -13,11 +13,10 @@
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <nav class="flex-column">
        
-        <div class="sidebar_list my-scrollbar nav-item px-3">
+        <div class="sidebar_list nav-item px-3">
             <div class="leftBox">
-                <h6 class="color_white bg_accent sidebar_dropdown has_list" @onclick="ToggleDropdown">
-                    <span class="oi oi-person" aria-hidden="true"></span> User <span class="oi oi-caret-bottom" style="font-size: 0.6em;
-        margin-left: 5px; padding-top:5px;" aria-hidden="true"></span>
+                <h6 class="color_white bg_accent sidebar_dropdown has_list  " @onclick="ToggleDropdown">
+                    User <span class="white_arrow_drpdwn"></span>
                 </h6>
                 <div class="hidden_list" style="display: @listDisplay">
                     <h6 class="color_title sidebar_dropdown" @onclick="GoToAllUser">

@@ -7,32 +7,25 @@
 @using UserManagement.Data
 @inject NavigationManager NavigationManager
 @inject UserService userService
-<style>
-    .name-hover:hover {
-        color: green;
-        cursor: pointer;
-    }
-     .center-text {
-        text-align: center;
-    }
-</style>
 
-<h4 class="popup_title bg_primary">User List</h4>
 
-@if (UsersList == null)
+
+
+@if (UsersList.Count == 0 || UsersList == null)
 {
-    <p><em>Loading...</em></p>
+    <p><em>No records</em></p>
 }
 else
 {
-    <div>
-        <table class="employee_table">
+    <h1 class="colorBlue">User List</h1>
+    <div class="table_detailsemply">
+        <table class="employee_table loan_table" width="100%">
             <thead>
                 <tr>
-                    <th width="20%" class="color_title">Name</th>
-                    <th width="20%" class="color_title">City</th>
-                    <th width="20%" class="color_title">Designation</th>
-                    <th width="80%" class="color_title">Skills</th>
+                    <th width="20%" class="bg-primary color_white">Name</th>
+                    <th width="20%" class="bg-primary color_white">City</th>
+                    <th width="20%" class="bg-primary color_white">Designation</th>
+                    <th width="80%" class="bg-primary color_white">Skills</th>
                     
                 </tr>
             </thead>
@@ -44,7 +37,6 @@ else
                         <td width="20%" class="color_title">@user.UserCity</td>
                         <td width="20%" class="color_title">@user.UserDesignation</td>
                         <td width="80%" class="color_title">@empSkillsDictionary[user.UserId]</td>
-                        
                     </tr>
                 }
             </tbody>

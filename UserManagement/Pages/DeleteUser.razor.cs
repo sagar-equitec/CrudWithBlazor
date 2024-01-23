@@ -4,7 +4,7 @@ namespace UserManagement.Pages
 {
     public partial class DeleteUser
     {
-        private List<GetAllUsersDetailsResult>? UserList;
+        private List<GetAllUsersDetailsResult>? UserList = new();
         private List<GetAllUsersSkillsResult>? SkillsList;
 
         private Dictionary<int, string> empSkillsDictionary = new Dictionary<int, string>();

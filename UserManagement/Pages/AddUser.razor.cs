@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using UserManagement.Models;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace UserManagement.Pages
 {
@@ -8,6 +10,8 @@ namespace UserManagement.Pages
     {
         private User _user = new User();
         private List<GetAllSkillsResult> skillList = new List<GetAllSkillsResult>();
+        private string status;
+        
         private List<int> _selectedSkillsList = new List<int>();
 
         private void ToggleSkill(int skillId)
@@ -15,10 +19,23 @@ namespace UserManagement.Pages
             if (_selectedSkillsList.Contains(skillId))
             {
                 _selectedSkillsList.Remove(skillId);
+
             }
             else
             {
                 _selectedSkillsList.Add(skillId);
+                
+            }
+            if(_selectedSkillsList.Count > 0)
+            {
+                _user.Error = "added";
+                status = "none";
+            }
+            else
+            {
+                _user.Error = null;
+                status = "block";
+              
             }
             StateHasChanged();
         }
@@ -58,6 +75,10 @@ namespace UserManagement.Pages
         private void OnCancelClicked()
         {
             NavigationManager.NavigateTo($"/");
+        }
+        private void OnResetClicked()
+        {
+            _user = new User();
         }
 
     }

@@ -1,14 +1,13 @@
-﻿@page "/deleteuserbyid/{id:int}"
+﻿@page "/restorebyid/{userid:int}"
 
 @using UserManagement.Models
 @using UserManagement.Data
-@inject IJSRuntime JSRuntime
-@inject UserService userService
 @inject NavigationManager NavigationManager
-
+@inject UserService userService
+@inject IJSRuntime JSRuntime
 
 <h1 class="colorBlue">
-    Delete User
+    Restore User
 </h1>
 
 @if (userWithSkill != null)
@@ -69,18 +68,16 @@
             </li>
 
 
-            <li class="col-12 mt_20">
-                <div class="form_btns">
-                    <button class="common_btn btnBlue" @onclick="() => DeletedUsersById(userWithSkill.UserId)">Delete</button>
 
-                    <button type="button" class="common_btn btnGry" @onclick="HandleCancel">Cancel</button>
-                </div>
-            </li>
-        </ul>
-    </EditForm>
+        <li class="col-12 mt_20">
+            <div class="form_btns">
+                    <button class="common_btn btnBlue" @onclick="() => RestoreUser(userWithSkill.UserId)">Restore</button>
 
-
-
+                <button type="button" class="common_btn btnGry" @onclick="HandleCancel">Cancel</button>
+            </div>
+        </li>
+    </ul>
+</EditForm>
 }
 else
 {

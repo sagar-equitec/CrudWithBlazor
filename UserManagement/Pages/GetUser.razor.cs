@@ -21,7 +21,10 @@ namespace UserManagement.Pages
             {
                 skillname = skill.Skill1 + ", " + skillname;
             }
-            skillname = skillname.Substring(0, skillname.Length - 2);
+            if (skillname != null)
+                skillname = skillname.Substring(0, skillname.Length - 2);
+            else
+                skillname = "no skills";
             foreach (var item in userWithSkillList)
             {
                 userWithSkill = item; 

@@ -5,7 +5,7 @@ namespace UserManagement.Pages
 {
     public partial class ShowUser
     {
-        private List<GetAllUsersDetailsResult>? UsersList;
+        private List<GetAllUsersDetailsResult>? UsersList = new();
         private List<GetAllUsersSkillsResult>? SkillsList;
      
         private Dictionary<int, string> empSkillsDictionary = new Dictionary<int, string>();

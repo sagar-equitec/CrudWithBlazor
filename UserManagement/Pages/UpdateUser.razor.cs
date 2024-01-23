@@ -51,11 +51,8 @@ namespace UserManagement.Pages
             await userService.DeleteSkillsById(Id);
 
             foreach (var skill in _selectedSkills)
-            {
-
+            { 
                 skillids = skill + ","+ skillids;
-                
-                /*await userService.AddUserSkillAsync(_newUser.UserId, skill);*/
             }
             skillids = skillids.Substring(0, skillids.Length - 1);
             Console.WriteLine(skillids);

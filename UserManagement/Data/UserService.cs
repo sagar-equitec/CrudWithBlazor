@@ -86,7 +86,7 @@ namespace UserManagement.Data
             return await _userContext.Procedures.GetDeletedRecordsAsync();
         }
 
-        public async Task DeleteSkillsById (int userid)
+       public async Task DeleteSkillsById (int userid)
         {
              await _userContext.Procedures.deleteSkillsAsync(userid);
         }

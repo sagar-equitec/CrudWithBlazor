@@ -8,39 +8,44 @@
 @inject UserService userService
 @inject IJSRuntime JSRuntime
 
-<h3>DeletedUsers</h3>
 
-@if (DeletedUserList == null)
+
+@if (deletedUserList.Count == 0 || deletedUserList == null)
 {
     <p>No records found</p>
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>City</th>
-                <th>Designation</th>
-                <th>Skills</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var user in DeletedUserListUpdated)
-            {
+    <h1 class="colorBlue">Deleted Users List</h1>
+    <div class="table_detailsemply">
+        <table class="employee_table loan_table" width="100%">
+            <thead>
                 <tr>
-                    <td >@user.UserName</td>
-                    <td>@user.UserCity</td>
-                    <td>@user.UserDesignation</td>
-                    <td>@empSkillsDictionary[user.id]</td>
-                    <td>
-                        <button class="btn btn-warning" @onclick="() => RestoreUser(user.id)">Restore</button>
-                    </td>
+                <tr>
+                    <th width="20%" class="bg-primary color_white">Name</th>
+                    <th width="20%" class="bg-primary color_white">City</th>
+                    <th width="20%" class="bg-primary color_white">Designation</th>
+                    <th width="60%" class="bg-primary color_white">Skills</th>
+                    <th width="60%" class="bg-primary color_white">Actions</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in deletedUserListUpdated)
+                {
+                    <tr @onclick="() => RestoreUser(user.id)">
+                        <td width="20%" class="color_title">@user.UserName</td>
+                        <td width="20%" class="color_title">@user.UserCity</td>
+                        <td width="20%" class="color_title">@user.UserDesignation</td>
+                        <td width="60%" class="color_title">@empSkillsDictionary[user.id]</td>
+                        <td width="60%" class="color_title">
+                            <button class="btn btn-warning" @onclick="() => RestoreUser(user.id)">Restore</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
 
 
